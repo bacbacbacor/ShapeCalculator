@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShapeCalculator.TriangleMenu"
+             Title="Triangle"
+             Shell.NavBarIsVisible="True"
+            BarBackground="gray">
+    
+    <!--Triangle Start -->
+
+    <ContentPage Title="Triangle" IconImageSource="triangle.png" >
+        <VerticalStackLayout  Margin="0,50,0,0" HorizontalOptions="Center">
+            <HorizontalStackLayout Margin="150,0,0,0">
+                
+                    <Image Source="triarea.png" HeightRequest="80" HorizontalOptions="Center"/>
+                
+                
+                <VerticalStackLayout Margin="50,0,0,0">
+                    <Label Text="Area" Margin="0,0,0,10" FontAttributes ="Bold"/>
+                    <Label Text="Edge 1" Margin="0,0,0,20"/>
+                    <Label Text="Edge 2" Margin="0,0,0,20"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="45,30,0,0">
+                    <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                        <Entry x:Name="txtedge1" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                        <Entry x:Name="txtedge2" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="20,25,0,0">
+                    <Picker x:Name="pkrTriUnit" MinimumHeightRequest="1" WidthRequest="100" Margin="0,20,0,0" FontSize="10">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>in</x:String>
+                                <x:String>m</x:String>
+                                <x:String>cm</x:String>
+                                <x:String>km</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Label Text="Result" Margin="0,21,0,0"/>
+                    <Border WidthRequest="100" HeightRequest="30" Stroke="Black" Margin="0,5,0,0">
+                        <Label x:Name="result_A" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="15,16,0,0">
+                    <Button x:Name="btnCalc1"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked1" WidthRequest="88" HeightRequest="20"/>
+                    <Button   Text="Reset" TextColor="black" BackgroundColor="White"  CornerRadius="20" BorderColor="Black" Clicked="onClear1" WidthRequest="88" HeightRequest="20"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout Margin="100,0,0,0">
+                   
+                        <Image Source="triperi.png" HeightRequest="100" HorizontalOptions="Center"/>
+                  
+                    
+                    <VerticalStackLayout Margin="50,0,0,0">
+                        <Label Text="Perimeter" Margin="0,0,0,10" FontAttributes ="Bold"/>
+                        <Label Text="Side 1" Margin="0,0,0,20"/>
+                        <Label Text="Side 2" Margin="0,0,0,20"/>
+                        <Label Text="Side 3" Margin="0,0,0,20"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="22,30,0,0">
+                        <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                            <Entry x:Name="txtSide1" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                        <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                            <Entry x:Name="txtSide2" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                        <Border HeightRequest="25" WidthRequest="100" Stroke="Gray">
+                            <Entry x:Name="txtSide3" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,65,0,0">
+                        <Picker x:Name="pkrTriUnit2" MinimumHeightRequest="1" WidthRequest="100" Margin="0,0,0,10" FontSize="10" >
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>in</x:String>
+                                    <x:String>m</x:String>
+                                    <x:String>cm</x:String>
+                                    <x:String>km</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,40,0,0">
+                        <Label Text="Result"/>
+                        <Border WidthRequest="100" HeightRequest="30" Stroke="Black" Margin="0,5,0,0">
+                            <Label x:Name="result_P" VerticalOptions="Center" HorizontalOptions="Center" />
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="15,35,0,0">
+                        <Button x:Name="btnCalc2"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onCLicked2" WidthRequest="88" HeightRequest="20"/>
+                        <Button x:Name="btnReset2"  Text="Reset" TextColor="black" BackgroundColor="White"  CornerRadius="20" BorderColor="Black" Clicked="onClear2" WidthRequest="88" HeightRequest="20"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="150,0,0,0">
+                   
+                        <Image Source="trivol.png" HeightRequest="100" HorizontalOptions="Center"/>
+                   
+                    
+                    <VerticalStackLayout Margin="50,0,0,0">
+                        <Label Text="Volume-Cone" Margin="0,0,0,10" FontAttributes ="Bold"/>
+                        <Label Text="Base" Margin="0,0,0,20"/>
+                        <Label Text="Radius(r)" Margin="0,0,0,20"/>
+                        <Label Text="Height(h)" Margin="0,0,0,20"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="0,30,0,0">
+                        <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                            <Entry x:Name="txtbase" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                        <Border HeightRequest="25" WidthRequest="100" Margin="0,0,0,15" Stroke="Gray">
+                            <Entry x:Name="txtradius" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                        <Border HeightRequest="25" WidthRequest="100" Stroke="Gray">
+                            <Entry x:Name="txtheight" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,65,0,0">
+                        <Picker x:Name="pkrTriUnit3" MinimumHeightRequest="1" WidthRequest="100" Margin="0,0,0,10" FontSize="10">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>in</x:String>
+                                    <x:String>m</x:String>
+                                    <x:String>cm</x:String>
+                                    <x:String>km</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,41,0,0">
+                        <Label Text="Result" />
+                        <Border WidthRequest="100" HeightRequest="30" Stroke="Black" Margin="0,5,0,0">
+                            <Label x:Name="result_VC" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="15,35,0,0">
+                        <Button x:Name="btnCalc3"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked3" WidthRequest="88" HeightRequest="20"/>
+                        <Button x:Name="btnReset3"  Text="Reset" TextColor="black" BackgroundColor="White"  CornerRadius="20" BorderColor="Black" Clicked="onClear3" WidthRequest="88" HeightRequest="20"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        </ContentPage>
+        <!--Triangle End --> 
+
+        <!--Square Start -->
+
+
+    <ContentPage Title="Square" IconImageSource="square.png" >
+        <VerticalStackLayout Margin="0,50,0,0" HorizontalOptions="Center">
+            <HorizontalStackLayout Margin="0,0,0,0">
+                <VerticalStackLayout>
+                    <Border>
+                        <Image Source="squarearea.png" HeightRequest="160" HorizontalOptions="Center"/>
+                    </Border>
+                    <Border>
+                        <Image Source="squareperi.png"  HeightRequest="100" HorizontalOptions="End"/>
+                    </Border>
+                    <Border>
+                        <Image Source="squarevolue.png"  HeightRequest="150" HorizontalOptions="End"/>
+                    </Border>
+
+                    
+                    
+                    
+
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="50,100,0,0">
+                    <Label Text="Side" FontAttributes="Bold" Margin="0,0,0,20"/>
+                    <Label Text="Results:" Margin="0,0,0,10"/>
+                    <Label Text="Area" Margin="0,0,0,10"/>
+                    <Label Text="Perimeter" Margin="0,0,0,10"/>
+                    <Label Text="Volume-Cube"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="0,100,0,0">
+                    <Border HeightRequest="25" WidthRequest="100" Margin="25,0,0,0" Stroke="gray">
+                        <Entry x:Name ="txtside" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="False"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="25,40,0,0" Stroke="gray">
+                        <Entry x:Name ="txtArea" FontSize="13" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="True"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="25,4,0,0" Stroke="gray">
+                        <Entry x:Name ="txtPero" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="True"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="25,4,0,0" Stroke="gray">
+                        <Entry x:Name ="txtVC" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="True"/>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="0,100,0,0">
+                    <Picker x:Name="pckSquaUnit" MinimumHeightRequest="1" WidthRequest="100" Margin="20,-7,0,0" FontSize=" 10">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>in</x:String>
+                                <x:String>m</x:String>
+                                <x:String>cm</x:String>
+                                <x:String>km</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <VerticalStackLayout Margin="15,35,0,0">
+                        <Button x:Name="btnCalc4"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked4" WidthRequest="88" HeightRequest="20"/>
+                        <Button x:Name="btnReset4"  Text="Reset" TextColor="black" BackgroundColor="White"  CornerRadius="20" BorderColor="Black" Clicked="onClear4" WidthRequest="88" HeightRequest="20"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage>
+    
+    <!--Square End -->
+
+    <!--Rectangle Start -->
+
+    <ContentPage Title="Rectangle" IconImageSource="rectangle.png">
+        <VerticalStackLayout HorizontalOptions="Center" Margin="0,50,0,0">
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+                    <Border>
+                        <Image Source="recarea.png"  HeightRequest="100" HorizontalOptions="Center"/>
+                    </Border>
+                    <Border>
+                        <Image Source="recperi.png" HeightRequest="100" HorizontalOptions="Center"/>
+                    </Border>
+                    <Border>
+                        <Image Source="recvol.png" HeightRequest="100" HorizontalOptions="Center"/>
+                    </Border>
+                    
+                    
+                    
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="20,28,0,0">
+                    <Label Text="Lenth(l)" Margin="0,0,0,5"/>
+                    <Label Text="Width(w)" Margin="0,0,0,20"/>
+                    <Label Text="Result" Margin="0,0,0,10"/>
+                    <Label Text="Area" FontAttributes="Bold" Margin="0,0,0,5"/>
+                    <Label Text="Perimeter" FontAttributes="Bold" Margin="0,0,0,50"/>
+                    <Label Text="Volume = Rectangular Tank" FontAttributes="Bold" Margin="0,0,0,8"/>
+                    <Label Text="Lenth(l)" Margin="0,0,0,5"/>
+                    <Label Text="Width(w)" Margin="0,0,0,5"/>
+                    <Label Text="Height(h)"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,26,0,0" Stroke="gray">
+                        <Entry x:Name ="txtreclen" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,1,0,45" Stroke="gray">
+                        <Entry x:Name ="txtrecwid" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,0,0,1" Stroke="gray">
+                        <Entry x:Name ="txtRecarea" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="True"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,0,0,74" Stroke="gray">
+                        <Entry x:Name ="txtRecPeri" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start" IsReadOnly="True"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,0,0,1" Stroke="gray">
+                        <Entry x:Name ="txtreclen_1" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,0,0,1" Stroke="gray">
+                        <Entry x:Name ="txtredwid_2" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100" Margin="-130,0,0,0" Stroke="gray">
+                        <Entry x:Name ="txtRecheight" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Picker x:Name="pckRecUnit" MinimumHeightRequest="1" WidthRequest="100" Margin="20,20,0,195" FontSize=" 10">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>in</x:String>
+                                <x:String>m</x:String>
+                                <x:String>cm</x:String>
+                                <x:String>km</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Picker x:Name="pckRecUnit2" MinimumHeightRequest="1" WidthRequest="100" Margin="20,-7,0,0" FontSize=" 10">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>in</x:String>
+                                <x:String>m</x:String>
+                                <x:String>cm</x:String>
+                                <x:String>km</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="20,10,0,0">
+                        <Button x:Name="btnRec"  Text="Calculate"  BackgroundColor="blue" CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked5" WidthRequest="88" HeightRequest="20"/>
+                        <Button x:Name="btnRecclr" Text="Reset" TextColor="black" BackgroundColor="White" CornerRadius="20" BorderColor="Black" Clicked="onClear5" WidthRequest="88" HeightRequest="20"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Result" Margin="50,167,0,0"/>
+                    <Border WidthRequest="100" HeightRequest="30" Stroke="Black" Margin="0,5,0,0">
+                        <Label x:Name="txtResultVol" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Border>
+                    <HorizontalStackLayout Margin="20,10,0,0">
+                        <Button x:Name="btnRec1"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked6"  WidthRequest="88" HeightRequest="20"/>
+                        <Button x:Name="btnRecclr1"  Text="Reset" TextColor="black" BackgroundColor="White" WidthRequest="88" HeightRequest="20" CornerRadius="20" BorderColor="Black" Clicked="onClear6"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <!--Rectangle End -->
+
+
+    <ContentPage Title="Circle" IconImageSource="circle.png">
+        <VerticalStackLayout Margin="0,50,0,0">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <VerticalStackLayout HorizontalOptions="Center" >
+                    
+                    <Border>
+                        <Image Source="circarea.png" HeightRequest="150"/>
+                    </Border>
+                    <Border>
+                        <Image Source="circperi.png" HeightRequest="150"/>
+
+                    </Border>
+                    <Border>
+                        <Image Source="cicrcvol.png" HeightRequest="120"/>
+                    </Border>
+                    
+                   
+                    
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="40,0,0,0">
+                    <Label Text="Radius(r)" FontAttributes="Bold" Margin="0,30,0,50"/>
+                    <Label Text="Result" FontAttributes="Bold" Margin="0,0,0,20"/>
+                    <Label Text="Area" Margin="0,0,0,20"/>
+                    <Label Text="Circumference" Margin="0,0,0,20"/>
+                    <Label Text="Volume-Sphere" Margin="0,0,0,20"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Margin="40,28,0,0">
+                    <Border HeightRequest="25" WidthRequest="100"  Stroke="gray" Margin="0,0,0,80">
+                        <Entry x:Name ="txtcircRad" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100"  Stroke="gray" Margin="0,0,0,15">
+                        <Label x:Name ="txtcircArea" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100"  Stroke="gray" Margin="0,0,0,15">
+                        <Label x:Name ="txtcircCum" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                    <Border HeightRequest="25" WidthRequest="100"  Stroke="gray">
+                        <Label x:Name ="txtcircVol" FontSize="13"  HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                    </Border>
+                </VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Picker x:Name="pckcircUnit" MinimumHeightRequest="1" WidthRequest="100" Margin="20,20,0,0" FontSize=" 10">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>in</x:String>
+                                <x:String>m</x:String>
+                                <x:String>cm</x:String>
+                                <x:String>km</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="20,0,0,380">
+                    <Button x:Name="btncirc"  Text="Calculate"  BackgroundColor="blue"  CornerRadius="20" Margin="0,0,0,5" BorderColor="Black" Clicked="onClicked7"  WidthRequest="88" HeightRequest="20"/>
+                    <Button x:Name="btncircclr"  Text="Reset" TextColor="black" BackgroundColor="White" WidthRequest="88" HeightRequest="20" CornerRadius="20" BorderColor="Black" Clicked="onClear7"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage>
+    
+    
+
+</TabbedPage>
+

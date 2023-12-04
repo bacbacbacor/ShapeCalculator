@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShapeCalculator.MainPage"
+             Title="Menu"
+             Shell.BackgroundColor="Gray">
+    <VerticalStackLayout BackgroundColor="Pink" HorizontalOptions="Center">
+        <Label Text="Select Shape" FontSize="Large" BackgroundColor="SkyBlue" Margin="0,20,0,0" />
+        <Button Text="Triangle" Margin="0,30,0,0"  />
+        <!-- Clicked="OnClickTri" -->
+        <Button Text="Square" Margin="0,5,0,5" />
+        <!-- Clicked="OnClickSqu" -->
+        <Button Text="Rectagnle" Margin="0,0,0,0"/>
+        <!-- Clicked="OnClickRec" -->
+        <Button Text="Circle" Margin="0,5,0,10"/>
+        <!-- Clicked="OnClickCir" -->
+        
+
+    </VerticalStackLayout>
+    
+</ContentPage>
+
